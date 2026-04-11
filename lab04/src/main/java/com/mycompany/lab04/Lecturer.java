@@ -11,7 +11,8 @@ package com.mycompany.lab04;
  *
  * @author STZ
  */
-public class Lecturer extends StaffMember {
+
+ public class Lecturer extends StaffMember {
     private int courseCount;
     private double paymentPerCourse;
     
@@ -29,3 +30,5 @@ public class Lecturer extends StaffMember {
         System.out.println("Payment Per Course: " + paymentPerCourse);
     }
 }
+    
+

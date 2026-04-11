@@ -1,0 +1,45 @@
+package com.mycompany.lab04;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author STZ
+ */
+public abstract class StaffMember {
+    private String fullName;
+    private final String staffId;
+    protected String department;
+    
+    public StaffMember(String fullName,String staffId,String department){
+        this.fullName=fullName;
+        this.staffId=staffId;
+        this.department=department;
+    }
+
+    public String getStaffId() {
+        return staffId;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+    public String getfullName(){
+        return fullName;
+    }
+        
+    public final void displayBasicDetails(){
+        System.out.println("Name: "+ fullName);
+        System.out.println("Staff ID: "+ staffId);
+        System.out.println("Department: "+ department);
+    }
+    abstract double calculateMonthlyPayement();
+    
+}
+/* StaffMember is abstract because it represents a general concept
+and should not be directly instantiated*/
+    
+

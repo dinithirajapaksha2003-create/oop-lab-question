@@ -13,11 +13,18 @@ public abstract class StaffMember {
     private String fullName;
     private final String staffId;
     protected String department;
+    private static int staffCount=0;
+    //staffCount is static because it is shared by all instances
     
     public StaffMember(String fullName,String staffId,String department){
         this.fullName=fullName;
         this.staffId=staffId;
         this.department=department;
+        staffCount++;
+    }
+
+    public static int getStaffCount() {
+        return staffCount;
     }
 
     public String getStaffId() {
@@ -36,8 +43,10 @@ public abstract class StaffMember {
         System.out.println("Staff ID: "+ staffId);
         System.out.println("Department: "+ department);
     }
+    public static void showSystemName(){
+        System.out.println("University staff");
+    }
     abstract double calculateMonthlyPayement();
-    
 }
 /* StaffMember is abstract because it represents a general concept
 and should not be directly instantiated*/

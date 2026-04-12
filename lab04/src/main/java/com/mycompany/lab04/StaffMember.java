@@ -47,6 +47,15 @@ public abstract class StaffMember {
         System.out.println("University staff");
     }
     abstract double calculateMonthlyPayement();
+    public void changeDepartment(String newDepartment) {
+        if (newDepartment != null && !newDepartment.isEmpty()) {
+            this.department = newDepartment;
+        }
+    }
+
+    public final void showCommonNotice() {
+        System.out.println("Notice: All staff must follow university policies.");
+    }
 }
 /* StaffMember is abstract because it represents a general concept
 and should not be directly instantiated*/

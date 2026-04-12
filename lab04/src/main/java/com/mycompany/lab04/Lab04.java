@@ -39,5 +39,10 @@ public class Lab04 {
         System.out.println();
         
         System.out.println("Total number of staff:"+StaffMember.getStaffCount());
+        
+        lec1.changeDepartment("SE");
+        lec1.showCommonNotice();
+        lec2.showCommonNotice();
+        Ass1.showCommonNotice();
     }
 }

@@ -10,7 +10,7 @@ public class ProductBillTest {
      System.out.println("Total="+total);
     } catch( NumberFormatException e){
      // Exception occurs because "two" is not a valid number
-     System.out.println("prica and quantity must be valid");
+     System.out.println("Error:price and quantity must be valid");
     }finally{
      System.out.println("Product bill calculation completed");
     }

@@ -1,8 +1,8 @@
 
 package com.mycompany.lab7.Question2;
 
-
 public class ProductBill {
+    
     private String priceText;
     private String quantityText;
     
@@ -16,3 +16,6 @@ public class ProductBill {
         return price*quantity;
     }
 }
+
+    
+

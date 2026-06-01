@@ -69,4 +69,66 @@ public class StudentDAO {
             e.getMessage());
         }
     }
+   public void findStudentById(int studentId) {
+
+    String sql =
+    "SELECT * FROM students WHERE student_id=?";
+
+    try {
+
+        Connection connection =StudentDatabaseConnection.getConnection();
+
+        PreparedStatement statement =connection.prepareStatement(sql);
+
+        statement.setInt(1, studentId);
+
+        ResultSet resultSet =statement.executeQuery();
+
+        if(resultSet.next()) {
+
+            System.out.println("ID: "+ resultSet.getInt("student_id"));
+
+            System.out.println("Name: "+ resultSet.getString("student_name"));
+
+            System.out.println("Mark: "+ resultSet.getInt("mark"));
+
+        } else {
+
+            System.out.println("Student not found.");
+        }
+
+    } catch(SQLException e) {
+
+        System.out.println( "Database error: "+ e.getMessage());
+    }
+} 
+   public void updateStudentMark(int studentId,int newMark) {
+
+    String sql ="UPDATE students SET mark=? WHERE student_id=?";
+
+    try {
+
+        Connection connection =StudentDatabaseConnection.getConnection();
+
+        PreparedStatement statement =connection.prepareStatement(sql);
+
+        statement.setInt(1,newMark);
+        statement.setInt(2,studentId);
+
+        int rowsUpdated =statement.executeUpdate();
+
+        if(rowsUpdated > 0) {
+
+            System.out.println("Student mark updated successfully.");
+
+        } else {
+
+            System.out.println("Student not found. Mark not updated.");
+        }
+
+    } catch(SQLException e) {
+
+        System.out.println("Database error: "+ e.getMessage());
+    }
+}
 }

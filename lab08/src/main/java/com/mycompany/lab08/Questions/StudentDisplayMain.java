@@ -1,0 +1,12 @@
+package com.mycompany.lab08.Questions;
+
+
+public class StudentDisplayMain {
+    public static void main(String[] args) {
+
+        StudentDAO dao = new StudentDAO();
+
+        dao.displayAllStudents();
+    }
+    
+}
